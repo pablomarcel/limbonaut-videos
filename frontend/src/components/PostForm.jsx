@@ -37,7 +37,7 @@ function PostForm({ postId, togglePostForm, returnAddForm }) {
         couplePrice: 0,
         familyPrice: 0,
       })
-      setImage('');     
+      setImage('');
       return
     }
     axios
@@ -74,7 +74,7 @@ function PostForm({ postId, togglePostForm, returnAddForm }) {
     }))
   }
 
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Title and content are mandatory fields
@@ -161,7 +161,7 @@ function PostForm({ postId, togglePostForm, returnAddForm }) {
               id='city'
               name='city'
               value={city}
-              placeholder="City"
+              placeholder="Genre"
               onChange={onChange}
             />
           </Form.Group>
@@ -171,7 +171,7 @@ function PostForm({ postId, togglePostForm, returnAddForm }) {
               id='country'
               name='country'
               value={country}
-              placeholder="Country"
+              placeholder="Release Date"
               onChange={onChange}
             />
           </Form.Group>
@@ -186,47 +186,7 @@ function PostForm({ postId, togglePostForm, returnAddForm }) {
               onChange={onChange}
             />
           </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Control
-              type="number"
-              id='airBnBPrice'
-              name='airBnBPrice'
-              value={airBnBPrice}
-              placeholder="AirBnB Price for 1 night"
-              onChange={onChange}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Control
-              type="number"
-              id='hotelPrice'
-              name='hotelPrice'
-              value={hotelPrice}
-              placeholder="Hotel price for 1 night"
-              onChange={onChange}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Control
-              type="number"
-              id='couplePrice'
-              name='couplePrice'
-              value={couplePrice}
-              placeholder="Round trip price for a couple"
-              onChange={onChange}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Control
-              type="number"
-              id='familyPrice'
-              name='familyPrice'
-              value={familyPrice}
-              placeholder="Round trip price for a family"
-              onChange={onChange}
-            />
-          </Form.Group>
- 
+
           <div className="d-grid gap-2">
             <Button variant="primary" type="Submit">
               {postId ? "Update Post" : "Add Post"}
