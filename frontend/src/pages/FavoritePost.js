@@ -61,7 +61,7 @@ const FavoritePost = () => {
 
           {favoriteposts.length > 0 ? (
             <>
-              {favoriteposts.map((post) => 
+              {favoriteposts.map((post) =>
                 <div key={post._id} className='pb-2 mb-2 bottom__line'>
                   <Post post={post} showUsername={true} fromFavoritePostPage={true} />
                   {/* Remove button */}
@@ -81,7 +81,7 @@ const FavoritePost = () => {
         </Col>
         {/* Image Slide Show area */}
         <Col className={toggleSlideShow? "show":"hide"}>
-          <h3 className='title'>Unforgettable Places Slide Show</h3>
+          <h3 className='title'>Game Reviews Slide Show</h3>
           {posts.length > 0 ? (<ImageSlideShow posts={posts} />):('')}
         </Col>
       </Row>

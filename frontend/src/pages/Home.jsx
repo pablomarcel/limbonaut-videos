@@ -50,7 +50,7 @@ const Home = () => {
   // Set the number of items for each page
   const postsPerPage = 2;
   const pagesVisited = pageNumber * postsPerPage;
-  // This function is used to display the set of items on the home page 
+  // This function is used to display the set of items on the home page
   const displayPosts = posts
     .slice(pagesVisited, pagesVisited + postsPerPage)
     .map((post, idx) => {
@@ -89,7 +89,7 @@ const Home = () => {
             >
               {toggleSlideShow? "Hide Slide Show" : "Show Slide Show"}
             </Button>
-          </div>      
+          </div>
         </Col>
       </Row>
 
@@ -101,7 +101,7 @@ const Home = () => {
               {
                 postList.map((post) => {
                   return (
-                    <ListGroup.Item key={post._id}> 
+                    <ListGroup.Item key={post._id}>
                       <div className="fw-bold h4">
                         <Link to={`/postDetail/${post._id}`} style={{ textDecoration: 'none' }}>{post.title}</Link>
                       </div>
@@ -111,7 +111,7 @@ const Home = () => {
                 })
               }
             </ListGroup>) : null}
-          <h3 className='title mb-2'>Post-List</h3>
+          <h3 className='title mb-2'>Review List</h3>
           {posts.length > 0 ? (
             <>
               {displayPosts}
@@ -135,7 +135,7 @@ const Home = () => {
         </Col>
         {/* Image Slide Show area */}
         <Col className={toggleSlideShow? "show":"hide"}>
-          <h3 className='title mb-2'>Unforgettable Places Slide Show</h3>
+          <h3 className='title mb-2'>Game Reviews Slide Show</h3>
           {posts.length > 0 ? (<ImageSlideShow posts={posts} />):('')}
         </Col>
       </Row>
