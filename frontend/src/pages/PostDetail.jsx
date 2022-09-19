@@ -126,7 +126,7 @@ const PostDetail = () => {
       </Button>{"  "}
       {user ?
         <Button variant="outline-primary" type="submit" onClick={addMyFavoritePost}>
-          Add to My Favorite Posts
+          Add to My Favorite Games
         </Button>
         : ''
       }
