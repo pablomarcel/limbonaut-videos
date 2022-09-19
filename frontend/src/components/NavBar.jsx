@@ -63,7 +63,7 @@ const NavBar = () => {
               className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')}
               onClick={()=>setOpen(false)}
             >
-              My Favorite Posts
+              My Favorite Games
             </NavLink>
           </li>
           <li className="nav-item">
