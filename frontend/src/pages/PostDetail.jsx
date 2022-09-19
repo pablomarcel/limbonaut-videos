@@ -93,7 +93,7 @@ const PostDetail = () => {
         </Col>
         <Col>
           <Card.Text>
-            Location: {post.city} - {post.country}
+            Genre: {post.city} - {post.country}
           </Card.Text>
           <Card.Text>
             {post.content}
