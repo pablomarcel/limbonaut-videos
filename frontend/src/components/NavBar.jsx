@@ -31,7 +31,7 @@ const NavBar = () => {
 		<nav className="navbar">
 			<NavLink to="/" className="nav-logo">
         <img className='nav-img' src={logo} alt='logo' />
-        Limbonaut Reviews
+        Limbonaut Videos
       </NavLink>
 			<div onClick={()=>setOpen(!open)} className="nav-icon">
 				{open ? <FiX /> : <FiMenu />}

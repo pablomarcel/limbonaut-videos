@@ -1,5 +1,5 @@
 # Limbonaut Videos
-Guide for gamers
+Videos for gamers
 
 # Problem Statement (Owner: Product)
 # Scope:
