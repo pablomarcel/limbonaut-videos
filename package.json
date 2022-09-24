@@ -1,5 +1,5 @@
 {
-  "name": "limbonaut-reviews",
+  "name": "limbonaut-videos",
   "version": "1.0.0",
   "description": "Video Game Reviews",
   "main": "index.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pablomarcel/limbonaut-reviews.git"
+    "url": "git+https://github.com/pablomarcel/limbonaut-videos.git"
   },
-  "author": "Limbonaut Reviews",
+  "author": "Limbonaut Videos",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pablomarcel/limbonaut-reviews/issues"
+    "url": "https://github.com/pablomarcel/limbonaut-videos/issues"
   },
-  "homepage": "https://github.com/pablomarcel/limbonaut-reviews#readme",
+  "homepage": "https://github.com/pablomarcel/limbonaut-videos#readme",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.160.0",
     "aws-sdk": "^2.1205.0",
