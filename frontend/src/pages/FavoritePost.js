@@ -7,6 +7,9 @@ import { getAllMyFavoritePosts, reset, deleteMyFavoritePost } from "../features/
 import { getAllPosts } from '../features/posts/postSlice'
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import React from 'react';
+import ReactPlayer from 'react-player'
+
 const FavoritePost = () => {
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
