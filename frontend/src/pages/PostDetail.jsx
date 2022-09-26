@@ -8,6 +8,8 @@ import formatDistance from 'date-fns/formatDistance';
 import CommentList from "../components/CommentList";
 import CommentForm from "../components/CommentForm";
 import default_image from '../logo/default_user.jpg';
+import React from 'react';
+import ReactPlayer from 'react-player'
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -74,16 +76,20 @@ const PostDetail = () => {
 
   // Get author image
   const authorImage = post.author && post.author.image ? post.author.image : default_image;
+  const videoUrl = 'https://www.youtube.com/watch?v=_Vk9UXZp2JY&t=168s'
 
   return (
     <Container fluid>
       <div className='title bottom__line'>{post.title}</div>
       <Row>
         <Col>
+
           <Card className='mb-2'>
-            {post.image ? <Card.Img src = {post.image} alt={post.title} /> : ''}
             <Card.Body>
               <Card.Text>
+                <div className="banner">
+                  <ReactPlayer className="w-100" url={post.image} controls />
+                </div>
                 <img src={authorImage} alt = '' className='author-small-image' />
                 {post.author ? ` ${post.author.firstName} ${post.author.lastName}`:''}
                 {post.updatedAt? ` - Last modified: ${formatDistance(new Date(post.updatedAt), new Date())}`:''}

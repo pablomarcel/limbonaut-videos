@@ -15,7 +15,7 @@ let s3 = new S3Client({
 });
 
 const fileFilter = (req, file, cb) => {
-  if (file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === 'image/jpeg') {
+  if (file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === 'image/jpeg' || file.mimetype === 'video/mp4') {
     cb(null, true);
   } else {
     cb(null, false);
@@ -29,7 +29,7 @@ const upload = multer({
     bucket: process.env.AWS_BUCKET_NAME,
     contentType: multerS3.AUTO_CONTENT_TYPE,
     limits: {
-      fileSize: 1024 * 1024 * 5
+      fileSize: 2048 * 2048 * 5
     },
     key: function (req, file, cb) {
       cb(null, new Date().toISOString().replace(/:/g, '-') + '-' + file.originalname);

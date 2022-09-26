@@ -16,12 +16,12 @@ const UserHome = () => {
   const [toggleSlideShow, setToggleSlideShow] = useState(true);
 
   const { user } = useSelector((state) => state.auth)
-    
+
   const { posts, isLoading, isError, message } = useSelector(
     (state) => state.posts
   )
   // console.log(posts);
-  
+
   useEffect(() => {
     if (isError) {
       toast.error(message)
@@ -29,10 +29,10 @@ const UserHome = () => {
 
     if (!user) {
       navigate('/login')
-    } 
+    }
 
     dispatch(getPostsByUser())
-  
+
     return () => {
       dispatch(reset())
     }
@@ -55,7 +55,7 @@ const UserHome = () => {
    };
 
   const returnAddForm = () => {
-    // Reset postId value 
+    // Reset postId value
     setPostId('');
   };
 
@@ -69,7 +69,19 @@ const UserHome = () => {
   return (
     <Container fluid>
       {/* Rendering button showing/hiding slide show */}
+
       <div className={toggleDisplay? "hide" : "right__side mt-2"}>
+        <div className="text-left">
+          {!toggleDisplay?
+              <Button className="text-left" variant="outline-primary" style={{
+                marginInline: "20px"
+              }
+              } onClick={()=> togglePostForm()}>
+                Add New Post
+              </Button> : ''}
+        </div>
+
+
         <Button
           variant="outline-primary"
           size="sm"
@@ -77,6 +89,7 @@ const UserHome = () => {
         >
           {toggleSlideShow? "Hide Slide Show" : "Show Slide Show"}
         </Button>
+
       </div>
       <Row>
         {/* Post Form area */}
@@ -86,14 +99,12 @@ const UserHome = () => {
         </Col>
         {/* User's Post-List area */}
         <Col>
+
           <h3 className='title'>My Post-List</h3>
-          {!toggleDisplay?
-            <Button variant="outline-primary" onClick={()=> togglePostForm()}>
-              Add New Post
-            </Button> : ''}
+
           {posts.length > 0 ? (
             <>
-              {posts.map((post, idx) => 
+              {posts.map((post, idx) =>
                 <div key={idx} className='pb-2 mb-2 mt-2 bottom__line'>
                   <Post post={post} showUsername={false} fromFavoritePostPage={false} />
                   {/* Update Button */}
